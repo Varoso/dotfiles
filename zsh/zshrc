@@ -1,6 +1,6 @@
 # ------ Definitions ------
 
-ZSH_HOME=~/.zsh
+ZSH_HOME=~/.dotfiles/zsh
 
 # ------ Misc options ------
 
@@ -61,4 +61,3 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 source $ZSH_HOME/theme/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_HOME/theme/p10k.zsh
-
