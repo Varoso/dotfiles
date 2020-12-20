@@ -1,0 +1,35 @@
+" ------ General ------
+
+" start " Enter by default in Insert mode
+set wildmenu " Enables visual autocomplete for command menu
+set lazyredraw " Redraw only when it needs to
+
+" ------ Editor ------
+
+syntax enable " Activate syntax highlight
+set number " Show line numbers
+set ruler " Show cursor position at bottom right
+set showmatch " Highlight matching brackets
+  
+" ------ Tabs ------
+  
+set expandtab " Insert spaces instead of tabs
+set tabstop=2 " Number of spaces per tab
+set softtabstop=2 " Number of spaces per tab when editing
+set autoindent " Remembers the indent of the current line for the next line
+  
+" ------ Folding ------
+
+set foldenable " Activate folds
+set foldlevelstart=99 " Open all folds by default
+set foldmethod=syntax " Fold based on syntax
+
+" ------ Search ------
+set incsearch "Search as characteres are entered
+set hlsearch "Highlight search results
+
+" ------ Keybinds ------
+
+" Space for open/close folds
+nnoremap <space> za
+
