@@ -1,0 +1,64 @@
+# ------ Definitions ------
+
+ZSH_HOME=~/.zsh
+
+# ------ Misc options ------
+
+setopt autocd
+setopt nomatch
+setopt notify
+
+
+# ------ History ------
+
+HISTFILE=$ZSH_HOME/history/.zsh_history # History file
+HISTSIZE=1000 # Number of commands that are loaded into memory from the history
+SAVEHIST=1000 # Number of commands that are stored in the history
+
+setopt appendhistory # Commands are appended to history instead of replaced
+setopt histignoredups # Duplicate commands are not saved in history
+setopt histverify # In history expansion the command are not executed directly, it is loaded into the command line ready to be executed by user
+
+
+# ------ Aliases ------
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias ls="ls -G"
+else
+  alias ls="ls --color=auto"
+fi
+alias ll="ls -lh"
+alias la="ls -lAh"
+
+alias ufetch="sh $ZSH_HOME/tools/ufetch"
+
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+
+alias config="vim ~/.zshrc"
+alias reload="source ~/.zshrc"
+
+
+# ------ Theme and colors
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export LS_COLORS="rs=0:no=00:mi=00:mh=00:ln=01;36:or=01;31:di=01;34:ow=04;01;34:st=34:tw=04;34:pi=01;33:so=01;33:do=01;33:bd=01;33:cd=01;33:su=01;35:sg=01;35:ca=01;35:ex=01;32:"
+else
+  eval "$(dircolors -b)" # Generate LS_COLORS export
+fi
+
+# ------ Completion ------
+
+autoload -U compinit
+compinit -d $ZSH_HOME/zcompdump/.zcompdump
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" 
+
+
+# ------ Theme ------
+
+source $ZSH_HOME/theme/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH_HOME/theme/p10k.zsh
+
