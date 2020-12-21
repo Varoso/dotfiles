@@ -1,6 +1,7 @@
 " ------ General ------
 
 " start " Enter by default in Insert mode
+set viminfo+=n~/.dotfiles/vim/viminfo " Stores viminfo in the vim folder
 set wildmenu " Enables visual autocomplete for command menu
 set lazyredraw " Redraw only when it needs to
 
