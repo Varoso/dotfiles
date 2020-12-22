@@ -107,4 +107,4 @@ echo "\n${BOLD}${GREEN}Removing unnecesary files...${RESET}"
 rm -rf $UNNECESARY_FILES
 echo "${BOLD}${GREEN}Done.${RESET}"
 
-echo "\n${BOLD}${BLUE}Installation completed. Have a nice day.${RESET}"
+echo "\n${BOLD}${BLUE}Installation completed. Don't forget to restart your terminal. Have a nice day.${RESET}"
