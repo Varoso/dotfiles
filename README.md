@@ -27,4 +27,4 @@ Suggestions and improvements are [welcome](https://github.com/Varoso/dotfiles/is
 ## Credits
 
 * [ufetch](https://gitlab.com/jschx/ufetch)
-* [powerlevel10k](hhttps://github.com/romkatv/powerlevel10k)
+* [powerlevel10k](https://github.com/romkatv/powerlevel10k)

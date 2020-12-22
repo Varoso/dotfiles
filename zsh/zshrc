@@ -32,7 +32,9 @@ alias la="ls -lAh"
 
 alias ufetch="sh $ZSH_HOME/tools/ufetch"
 
-alias diff="diff --color=auto"
+if [[ "$OSTYPE" != darwin* ]]; then
+  alias diff="diff --color=auto"
+fi
 alias grep="grep --color=auto"
 
 alias config="vim ~/.zshrc"
