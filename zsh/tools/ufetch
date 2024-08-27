@@ -8,22 +8,6 @@ kernel="$(uname -sr)"
 uptime="$(uptime | awk -F, '{sub(".*up ",x,$1);print $1}' | sed -e 's/^[ \t]*//')"
 shell="$(basename "${SHELL}")"
 
-## PACKAGE MANAGER DETECTION
-
-if [ -x "$(command -v pkgin)" ]; then
-	packages="$(pkgin list | wc -l)"
-elif [ -x "$(command -v brew)" ]; then
-	brew_packages="$(brew list --formulae | wc -l)"
-	cask_packages="$(brew list --cask 2> /dev/null | wc -l)"
-	packages="$(( ${brew_packages} + ${cask_packages} ))"
-elif [ -x "$(command -v port)" ]; then
-	packages="$(port installed | wc -l)"
-else
-	packages='unknown'
-fi
-
-packages="$(echo "${packages}" | sed -e 's/^[ /t]*//')"
-
 ## UI DETECTION
 
 if [ -n "${DE}" ]; then
@@ -69,9 +53,8 @@ ${c0}         (/     ${nc}${USER}${ic}@${nc}${host}${reset}
 ${c0}    .---__--.   ${lc}OS:        ${ic}${os}${reset}
 ${c0}   /         \  ${lc}KERNEL:    ${ic}${kernel}${reset}
 ${c0}  |         /   ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}  |         \\_  ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}   \         /  ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}    \`._.-._.\`   ${lc}${uitype}:        ${ic}${ui}${reset}
-
+${c0}  |         \\_ ${lc} SHELL:     ${ic}${shell}${reset}
+${c0}   \         /  ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}    \`._.-._.\`
 		${palette}
 EOF
