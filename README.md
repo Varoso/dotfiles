@@ -14,7 +14,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Varoso/dotfiles/master/ins
 
 ## Font
 
-Any of the [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) can be used for the best compatibility with powerlevel10k. In my setup I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) font.
+Any of the [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) can be used for the best compatibility with powerlevel10k. In my setup I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) font, you can find it in the *font* folder.
 
 ## Iterm2 colors
 
