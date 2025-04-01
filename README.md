@@ -18,7 +18,7 @@ Any of the [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) can be used for
 
 ## Iterm2 colors
 
-I use a color scheme based on Atom's One Dark theme, you can find it in [iterm](https://github.com/Varoso/dotfiles/tree/master/iterm) folder.
+I use a color scheme based on Atom's One Dark theme, you can find it in [iterm](https://github.com/Varoso/dotfiles/tree/master/iterm/colors) folder.
 
 ## Feedback
 
@@ -26,5 +26,4 @@ Suggestions and improvements are [welcome](https://github.com/Varoso/dotfiles/is
 
 ## Credits
 
-* [ufetch](https://gitlab.com/jschx/ufetch)
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k)

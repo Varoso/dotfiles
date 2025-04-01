@@ -11,10 +11,6 @@ BRANCH=master
 FILES="misc/hushlogin vim/vimrc zsh/zshrc"
 UNNECESARY_FILES=".git assets LICENSE README.md"
 
-THEME_REPO=https://github.com/romkatv/powerlevel10k
-THEME_BRANCH=master
-THEME_FOLDER=$DOTFILES/zsh/theme/powerlevel10k
-
 RED=$(printf '\033[31m')
 GREEN=$(printf '\033[32m')
 YELLOW=$(printf '\033[33m')
@@ -40,6 +36,11 @@ command_exists git || {
   exit 1
 }
 
+command_exists brew || {
+  error "Homebrew must be installed to continue"
+  exit 1
+}
+
 # Presentation and install confirmation
 printf "${BOLD}${BLUE}"
 cat <<'EOF'
@@ -53,6 +54,9 @@ EOF
 printf "${RESET}"
 
 cat <<EOF
+
+✓
+✕
 
 ${BOLD}${BLUE}You are about to install the following configuration files:${RESET}
 ${BOLD}${YELLOW}  • .hushlogin${RESET}
@@ -94,10 +98,10 @@ for FILE in $FILES; do
 done
 echo "${BOLD}${GREEN}Done.${RESET}"
 
-# Clone theme repository
+# Installing theme
 echo "\n${BOLD}${GREEN}Installing theme...${RESET}"
-git clone --quiet --dept=1 --branch "$THEME_BRANCH" "$THEME_REPO" "$THEME_FOLDER" > /dev/null || {
-  error "Git clone of theme failed"
+brew install powerlevel10k > /dev/null || {
+  error "Installation of theme failed"
   exit 1
 }
 echo "${BOLD}${GREEN}Done.${RESET}"

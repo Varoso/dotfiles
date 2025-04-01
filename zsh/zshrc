@@ -1,13 +1,13 @@
 # ------ Definitions ------
 
 ZSH_HOME=~/.dotfiles/zsh
+THEME_HOME=/opt/homebrew/opt
 
 # ------ Misc options ------
 
 setopt autocd
 setopt nomatch
 setopt notify
-
 
 # ------ History ------
 
@@ -19,7 +19,6 @@ setopt appendhistory # Commands are appended to history instead of replaced
 setopt histignoredups # Duplicate commands are not saved in history
 setopt histverify # In history expansion the command are not executed directly, it is loaded into the command line ready to be executed by user
 
-
 # ------ Aliases ------
 
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -30,8 +29,6 @@ fi
 alias ll="ls -lh"
 alias la="ls -lAh"
 
-alias ufetch="sh $ZSH_HOME/tools/ufetch"
-
 if [[ "$OSTYPE" != darwin* ]]; then
   alias diff="diff --color=auto"
 fi
@@ -39,7 +36,6 @@ alias grep="grep --color=auto"
 
 alias config="vim ~/.zshrc"
 alias reload="source ~/.zshrc"
-
 
 # ------ Theme and colors
 
@@ -58,8 +54,11 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" 
 
-
 # ------ Theme ------
 
-source $ZSH_HOME/theme/powerlevel10k/powerlevel10k.zsh-theme
+source $THEME_HOME/powerlevel10k
 source $ZSH_HOME/theme/p10k.zsh
+
+# ------ Homebrew config ------
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
