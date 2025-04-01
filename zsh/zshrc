@@ -56,7 +56,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # ------ Theme ------
 
-source $THEME_HOME/powerlevel10k
+source $THEME_HOME/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_HOME/theme/p10k.zsh
 
 # ------ Homebrew config ------

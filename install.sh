@@ -55,9 +55,6 @@ printf "${RESET}"
 
 cat <<EOF
 
-✓
-✕
-
 ${BOLD}${BLUE}You are about to install the following configuration files:${RESET}
 ${BOLD}${YELLOW}  • .hushlogin${RESET}
 ${BOLD}${YELLOW}  • .vimrc${RESET}
